@@ -38,5 +38,28 @@ namespace EmployeesProject.Controllers
 
         }
 
+        [HttpPost]
+        public void UpdateEmployee([FromForm] Employee employee)
+        {
+            var emp = new EmployeeOperation();
+            emp.UpdateEmployee(employee);
+
+        }
+        [HttpPost]
+        public void DeleteEmployee([FromForm] Employee employee)
+        {
+            var emp = new EmployeeOperation();
+            emp.DeleteEmployee(employee);
+
+        }
+        [HttpPost]
+        public void existsEmployee([FromForm] Employee employee)
+        {
+            var emp = new EmployeeOperation();
+           
+            bool exists =  emp.IdExists(employee);
+
+
+        }
     }
 }
