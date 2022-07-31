@@ -3,14 +3,16 @@
 }
 <style>
     td, th {
-      border: 1px solid #dddddd;
-      text-align: left;
-      padding: 8px;
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
     }
 
-
 </style>
-<h2>Employees Table</h2><br>
+<h2>Employees Table</h2>
+<br>
+<h5>@ViewData["Message"]  </h5>
+<h5> saeed is @ViewData["Employees"] </h5>
 <div style="display: inline">
     <table>
         <tr>
@@ -46,5 +48,15 @@
             <th></th>
         </tr>
     </table>
-</div><br>
+</div>
+<br>
+<h6>emps has @ViewData["eSize"] rows</h6>
+<ul>
+  @foreach (var item in (List<string>)ViewBag.List){
+        <li>
+            @item
+        </li>
+    }
+</ul>
+
 <a asp-area="" asp-controller="Employees" asp-action="Create">Add a New Employee</a>
